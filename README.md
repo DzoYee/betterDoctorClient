@@ -3,7 +3,10 @@ My Project
  
 Welcome.
  
- 
+
+Usage
+---
+npm run start
  
 Setup
 ---

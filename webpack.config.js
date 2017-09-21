@@ -26,7 +26,14 @@ let config = {
   },
   plugins: [
     new ExtractTextWebpackPlugin('styles.css')
-  ]
+  ],
+  devServer: {
+    contentBase: path.resolve(__dirname, './public'), //from where we servce
+    historyApiFallback: true, //fallback to index.html for SPAs
+    inline: true,
+    open: true
+  },
+  devtool: 'eval-source-map'
 }
 
 module.exports = config;
