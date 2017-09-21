@@ -1,1 +1,5 @@
-document.write("hello doctor!");
+const doctor = () => {
+  document.write("hello doctor!");
+}
+
+doctor();
