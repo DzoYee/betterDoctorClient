@@ -1,7 +1,7 @@
 require('./assets/stylesheets/styles.scss');
 
-const doctor = () => {
-  document.write("hello doctor!");
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './app/App.jsx';
 
-doctor();
+ReactDOM.render(<App />, document.getElementById('root'));
