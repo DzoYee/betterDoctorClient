@@ -10,6 +10,12 @@ let config = {
     path: path.join(__dirname, './public'),
     filename: 'bundle.js'
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'],
+    alias: {
+      images: path.resolve(__dirname, 'src/assets/images')
+    }
+  },
   module: {
     rules: [
       {
