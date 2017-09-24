@@ -10,10 +10,14 @@ class App extends Component {
 
     this.state = {
       suggestions: [],
+      results: []
     };
+
+    this.doctoSuggestions = this.doctorSuggestions.bind(this);
+    this.doctorSearch = this.doctorSearch.bind(this);
   }
 
-  doctorSearch(term) {
+  doctorSuggestions(term) {
     fetch('http://localhost:8000/autocomplete/' + term)
     .then(res => res.json())
     .then(suggestions => {
@@ -23,8 +27,19 @@ class App extends Component {
     });
   }
 
+  doctorSearch(term) {
+    fetch('http://localhost:8000/search/' + term)
+    .then(res => res.json())
+    .then(results => {
+      this.setState({
+        results: results
+      });
+    });
+  }
+
   render() {
-    const doctorSearch = _.debounce((term) => { this.doctorSearch(term) }, 300);;
+    const doctorSuggestions = _.debounce((term) => { this.doctorSuggestions(term) }, 300);
+    const doctorSearch = this.doctorSearch;
     return (
       <div className="search container">
         <div className="row">
@@ -32,9 +47,11 @@ class App extends Component {
             <img className="header-image" src={betterDoctorHeader} alt=""/>
           </div>
           <SearchBar
-            onSearchTermChange={doctorSearch}
+            onSearchTermChange={doctorSuggestions}
+            doctorSearch={doctorSearch}
             suggestions={this.state.suggestions} />
-          <DoctorList />
+          <DoctorList 
+            results={this.state.results}/>
         </div>
       </div>
     );

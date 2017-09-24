@@ -24,7 +24,7 @@ const SearchBarSuggestions = (props) => {
 };
 
 SearchBarSuggestions.propTypes = {
-  suggestions: PropTypes.array
+  suggestions: PropTypes.array.isRequired
 };
 
 export default SearchBarSuggestions;

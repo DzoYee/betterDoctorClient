@@ -1,11 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const DoctorListItem = ({doctor}) => {
+const DoctorListItem = (doctor) => {
   return (
-    <li>
-      <h4>One of the doctors</h4>
-    </li>
+    <div className="doctor_list_item">
+      <div>{doctor.firstName}</div>
+      <div>{doctor.lastName}</div>
+      <div>{doctor.title}</div>
+      <img src={doctor.imageUrl} />
+    </div>
   );
+};
+
+DoctorListItem.propTypes = {
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired
 };
 
 export default DoctorListItem;
