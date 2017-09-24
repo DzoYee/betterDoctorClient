@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBarSuggestion = (props) => {
   return (
     <li>
-      <div>This is a suggestion</div>
+      <div>{props.firstName + ' ' + props.lastName}</div>
     </li>
   );
 };

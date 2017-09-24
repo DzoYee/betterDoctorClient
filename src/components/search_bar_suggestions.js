@@ -1,16 +1,18 @@
 import React from 'react';
 import SearchBarSuggestion from './search_bar_suggestion.js';
+import _ from 'underscore';
 
 const SearchBarSuggestions = (props) => {
-  console.log(props);
-  let suggestions = "test";
-  if (props.suggestions) {
-    const suggestions = props.suggestions.map((suggestion) => {
-      return (
-        <SearchBarSuggestion />
-      );
-    });
-  }
+  const suggestions = _.map(props.suggestions, (doctor) => {
+    return (
+      <SearchBarSuggestion 
+        key={doctor.uid}
+        firstName={doctor.first_name}
+        lastName={doctor.last_name}
+      />
+    );
+  });
+
   return (
     <ul>
       {suggestions}

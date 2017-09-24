@@ -14,8 +14,8 @@ class App extends Component {
 
   doctorSearch(term) {
     fetch('http://localhost:8000/autocomplete/' + term)
-    .then(results => {
-      console.log("updated: ", results);
+    .then(res => res.json())
+    .then(suggestions => {
       this.setState({
         suggestions: suggestions
       });
@@ -23,12 +23,12 @@ class App extends Component {
   }
 
   render() {
-    const doctorSearch = _.this.doctorSearch;
+    const doctorSearch = _.debounce((term) => { this.doctorSearch(term) }, 300);;
     return (
       <div>
         <h1>Hello from my React component!</h1>
         <SearchBar 
-          onSearchTermChange={this.doctorSearch}
+          onSearchTermChange={doctorSearch}
           suggestions={this.state.suggestions} />
         <DoctorList />
       </div>
