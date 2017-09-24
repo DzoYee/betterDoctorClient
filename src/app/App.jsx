@@ -25,12 +25,16 @@ class App extends Component {
   render() {
     const doctorSearch = _.debounce((term) => { this.doctorSearch(term) }, 300);;
     return (
-      <div className="search">
-        <h1>Hello from my React component!</h1>
-        <SearchBar 
-          onSearchTermChange={doctorSearch}
-          suggestions={this.state.suggestions} />
-        <DoctorList />
+      <div className="search container">
+        <div className="row justify-content-center">
+          <div className="col-xs-6 col-xs-offset-3">
+            
+          </div>
+          <SearchBar
+            onSearchTermChange={doctorSearch}
+            suggestions={this.state.suggestions} />
+          <DoctorList />
+        </div>
       </div>
     );
   }

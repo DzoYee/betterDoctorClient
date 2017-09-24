@@ -11,7 +11,7 @@ const DoctorList = (props) => {
       // {doctorItems}
   return (
     <ul className="">
-      <h2>Test</h2>
+      <h2>Add input and results will arrive here</h2>
     </ul>
   );
 };

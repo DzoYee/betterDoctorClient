@@ -10,8 +10,9 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="searchBar">
+      <div className="searchBar col-xs-12">
         <input
+          id="searchBar"
           list="doctorSearch"
           value={this.state.term}
           onChange={event => this.onInputChange(event.target.value)} />

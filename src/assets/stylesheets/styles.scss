@@ -1,7 +1,11 @@
-$doctor: purple;
+$doctor: red;
 
 body {
-  background-color: $doctor;
+  // background-color: $doctor;
+}
+
+#searchBar {
+  width: 100%
 }
 
 .autocomplete-suggestions {
