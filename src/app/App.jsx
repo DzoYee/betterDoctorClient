@@ -25,7 +25,7 @@ class App extends Component {
   render() {
     const doctorSearch = _.debounce((term) => { this.doctorSearch(term) }, 300);;
     return (
-      <div>
+      <div className="search">
         <h1>Hello from my React component!</h1>
         <SearchBar 
           onSearchTermChange={doctorSearch}

@@ -10,8 +10,9 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="searchBar">
         <input
+          list="doctorSearch"
           value={this.state.term}
           onChange={event => this.onInputChange(event.target.value)} />
         <SearchBarSuggestions suggestions={this.props.suggestions} />

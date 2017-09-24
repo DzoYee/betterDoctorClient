@@ -2,9 +2,8 @@ import React from 'react';
 
 const SearchBarSuggestion = (props) => {
   return (
-    <li>
-      <div>{props.firstName + ' ' + props.lastName}</div>
-    </li>
+    <option className="autocomplete-suggestion" 
+      value={props.firstName + ' ' + props.lastName} />
   );
 };
 

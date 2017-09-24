@@ -14,9 +14,11 @@ const SearchBarSuggestions = (props) => {
   });
 
   return (
-    <ul>
-      {suggestions}
-    </ul>
+    <div className="autocomplete-suggestions">
+      <datalist id="doctorSearch">
+        {suggestions}
+      </datalist>
+    </div>
   );
 };
 
