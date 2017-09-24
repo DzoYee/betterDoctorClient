@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
+import SearchBarSuggestions from './search_bar_suggestions.js';
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { term: 'Starting Value' };
+    this.state = { term: '' };
   }
-    
+
   render() {
     return (
       <div>
-        <input type="text" value={this.state.term} />
+        <input
+          value={this.state.term}
+          onChange={event => this.onInputChange(event.target.value)} />
+        <SearchBarSuggestions />
       </div>
     );
+  }
+
+  onInputChnage(term) {
+    this.setState({term});
+    // this.props.onSearchTermChange(term);
   }
 }
 
