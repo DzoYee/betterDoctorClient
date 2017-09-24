@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBarSuggestions from './search_bar_suggestions.js';
+import PropTypes from 'prop-types';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -26,5 +27,9 @@ class SearchBar extends Component {
     this.props.onSearchTermChange(term);
   }
 }
+
+SearchBar.propTypes = {
+  suggestions: PropTypes.array
+};
 
 export default SearchBar;

@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBarSuggestion from './search_bar_suggestion.js';
 import _ from 'underscore';
+import PropTypes from 'prop-types';
 
 const SearchBarSuggestions = (props) => {
   const suggestions = _.map(props.suggestions, (doctor) => {
@@ -20,6 +21,10 @@ const SearchBarSuggestions = (props) => {
       </datalist>
     </div>
   );
+};
+
+SearchBarSuggestions.propTypes = {
+  suggestions: PropTypes.array
 };
 
 export default SearchBarSuggestions;
