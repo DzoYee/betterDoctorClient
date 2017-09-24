@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import SearchBar from '../components/search_bar.js';
-import DoctorList from '../components/doctor_list.js';
+import SearchBar from 'components/search_bar.js';
+import DoctorList from 'components/doctor_list.js';
 import _ from 'underscore';
+import betterDoctorHeader from 'images/betterDoctorHeader.png';
 
 class App extends Component {
   constructor(props) {
@@ -26,9 +27,9 @@ class App extends Component {
     const doctorSearch = _.debounce((term) => { this.doctorSearch(term) }, 300);;
     return (
       <div className="search container">
-        <div className="row justify-content-center">
-          <div className="col-xs-6 col-xs-offset-3">
-            
+        <div className="row">
+          <div className="col-xs-8 col-xs-offset-2 header-wrapper">
+            <img className="header-image" src={betterDoctorHeader} alt=""/>
           </div>
           <SearchBar
             onSearchTermChange={doctorSearch}

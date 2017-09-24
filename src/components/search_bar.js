@@ -10,7 +10,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="searchBar col-xs-12">
+      <div className="searchBar col-xs-8 col-xs-offset-2">
         <input
           id="searchBar"
           list="doctorSearch"

@@ -13,7 +13,8 @@ let config = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'],
     alias: {
-      images: path.resolve(__dirname, 'src/assets/images')
+      images: path.resolve(__dirname, 'src/assets/images'),
+      components: path.resolve(__dirname, 'src/components')
     }
   },
   module: {
@@ -34,7 +35,30 @@ let config = {
         test: /\.jsx$/,
         loader: 'babel-loader',
         exclude: /node_modules./
-      }
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: ['file-loader?context=src/assets/images/&name=images/[path][name].[ext]', {  // images loader
+          loader: 'image-webpack-loader',
+          query: {
+            mozjpeg: {
+              progressive: true,
+            },
+            gifsicle: {
+              interlaced: false,
+            },
+            optipng: {
+              optimizationLevel: 4,
+            },
+            pngquant: {
+              quality: '75-90',
+              speed: 3,
+            },
+          },
+        }],
+        exclude: /node_modules/,
+        include: __dirname,
+      },
     ]
   },
   plugins: [
