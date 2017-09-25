@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const DoctorListItem = (doctor) => {
   return (
-    <div className="doctor_list_item">
+    <div className="doctor-list-item">
       <div>{doctor.firstName}</div>
       <div>{doctor.lastName}</div>
       <div>{doctor.title}</div>

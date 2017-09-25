@@ -16,7 +16,7 @@ const DoctorList = (props) => {
   });
 
   return (
-    <div className="col-xs-6 col-xs-offset-3 doctor_list_container">
+    <div className="col-xs-6 col-xs-offset-3 doctor-list-container">
         {doctorItems}
     </div>
   );

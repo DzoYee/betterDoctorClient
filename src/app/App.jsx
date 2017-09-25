@@ -13,28 +13,8 @@ class App extends Component {
       results: []
     };
 
-    this.doctoSuggestions = this.doctorSuggestions.bind(this);
+    this.doctorSuggestions = this.doctorSuggestions.bind(this);
     this.doctorSearch = this.doctorSearch.bind(this);
-  }
-
-  doctorSuggestions(term) {
-    fetch('http://localhost:8000/autocomplete/' + term)
-    .then(res => res.json())
-    .then(suggestions => {
-      this.setState({
-        suggestions: suggestions
-      });
-    });
-  }
-
-  doctorSearch(term) {
-    fetch('http://localhost:8000/search/' + term)
-    .then(res => res.json())
-    .then(results => {
-      this.setState({
-        results: results
-      });
-    });
   }
 
   render() {
@@ -55,6 +35,26 @@ class App extends Component {
         </div>
       </div>
     );
+  }
+
+  doctorSuggestions(term) {
+    fetch('http://localhost:8000/autocomplete/' + term)
+    .then(res => res.json())
+    .then(suggestions => {
+      this.setState({
+        suggestions: suggestions
+      });
+    });
+  }
+
+  doctorSearch(term) {
+    fetch('http://localhost:8000/search/' + term)
+    .then(res => res.json())
+    .then(results => {
+      this.setState({
+        results: results
+      });
+    });
   }
 };
 

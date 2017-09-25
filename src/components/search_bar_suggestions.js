@@ -16,7 +16,7 @@ const SearchBarSuggestions = (props) => {
 
   return (
     <div className="autocomplete-suggestions">
-      <datalist id="doctorSearch">
+      <datalist id="doctor-search">
         {suggestions}
       </datalist>
     </div>
