@@ -35,7 +35,7 @@ class SearchBar extends Component {
   }
 
   trackOption() {
-    let options = _.map(this.props.suggestions, (suggestion) => {
+    const options = _.map(this.props.suggestions, (suggestion) => {
       return suggestion.first_name + ' ' + suggestion.last_name;
     });
     this.setState({options});
