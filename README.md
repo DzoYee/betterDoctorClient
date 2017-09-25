@@ -16,9 +16,24 @@ npm install
 ```
 
  
-Compile
+Build
 ---
  
 ```
-npm run compile
+npm run build
+```
+
+
+Production Build
+---
+ 
+```
+npm run production
+```
+
+Test
+---
+ 
+```
+npm test
 ```
