@@ -15,7 +15,6 @@ const DoctorList = (props) => {
     );
   });
 
-      // {doctorItems}
   return (
     <div className="col-xs-6 col-xs-offset-3 doctor_list_container">
         {doctorItems}
