@@ -7,7 +7,42 @@ import DoctorList from '../src/components/doctor_list.js';
 import DoctorListItem from '../src/components/doctor_list_item.js';
 
 describe('App', () => {
-  it(true, () => {
-    expect(1).toEqual(1);
-  })
+  let props;
+  let mountedApp;
+  const app = () => {
+    if (!mountedApp) {
+      mountedApp = mount(
+        <App {...props} />
+      );
+    }
+    return mountedApp;
+  }
+
+  beforeEach(() => {
+    props = {
+    };
+    mountedApp = undefined;
+  });
+
+  it("always renders a 'SearchBar'", () => {
+    expect(app().find(SearchBar).length).toBe(1);
+  });
+
+  describe("rendered 'SearchBar'", () => {
+    it("receives suggestion as a prop", () => {
+      const searchBar = app().find(SearchBar);
+      expect(Object.keys(searchBar.props()).length).toBe(3);
+    });
+  });
+
+  it("always renders a 'DoctorList'", () => {
+    expect(app().find(DoctorList).length).toBe(1);
+  });
+
+  describe("rendered 'DoctorList'", () => {
+    it("receives suggestion as a prop", () => {
+      const doctorList = app().find(DoctorList);
+      expect(Object.keys(doctorList.props()).length).toBe(1);
+    });
+  });
 })

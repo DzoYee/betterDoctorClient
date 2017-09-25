@@ -43,7 +43,7 @@ describe('SearchBar', () => {
   });
 
   describe("rendered 'SearchBarSuggestions'", () => {
-    it("does not receive any props", () => {
+    it("receives suggestion as a prop", () => {
       const searchBarSuggestions = searchBar().find(SearchBarSuggestions);
       expect(Object.keys(searchBarSuggestions.props()).length).toBe(1);
     });
