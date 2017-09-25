@@ -19,13 +19,6 @@ class SearchBar extends Component {
     this.trackOptionsDebounce();
   }
 
-  trackOption() {
-    let options = _.map(this.props.suggestions, (suggestion) => {
-      return suggestion.first_name + ' ' + suggestion.last_name;
-    });
-    this.setState({options});
-  }
-
   render() {
     return (
       <div className="search-bar col-xs-8 col-xs-offset-2">
@@ -41,8 +34,17 @@ class SearchBar extends Component {
     );
   }
 
+  trackOption() {
+    let options = _.map(this.props.suggestions, (suggestion) => {
+      return suggestion.first_name + ' ' + suggestion.last_name;
+    });
+    this.setState({options});
+  }
+
   onInputChange(term) {
-    if (term != this.state.term && this.state.options.indexOf(term) > -1) {
+    if (term === '') { 
+      this.setState({term});
+    } else if (term != this.state.term && this.state.options.indexOf(term) > -1) {
       this.setState({term});
       this.onFormSubmit();
     } else {
