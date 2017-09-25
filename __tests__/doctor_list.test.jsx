@@ -59,7 +59,7 @@ describe('DoctorList', () => {
       image_url: 'bobtheBuilder.com'
     })
       const doctorListItem = doctorList().find(DoctorListItem);
-      expect(Object.keys(doctorListItem.props()).length).toBe(4);
+      expect(Object.keys(doctorListItem.props()).length).toBe(5);
     });
   });
 })
