@@ -4,10 +4,15 @@ import PropTypes from 'prop-types';
 const DoctorListItem = (doctor) => {
   return (
     <div className="doctor-list-item">
-      <div>{doctor.firstName}</div>
-      <div>{doctor.lastName}</div>
-      <div>{doctor.title}</div>
-      <img src={doctor.imageUrl} />
+      <div className="row">
+        <div className="col-xs-12 doctor-item-header">{doctor.firstName + ' ' + doctor.lastName + ', ' +doctor.title} </div>
+        <div className="col-xs-3 doctor-image-wrapper">
+          <img src={doctor.imageUrl} />
+        </div>
+        <div className="col-xs-9 bio-wrapper">
+          <span>{doctor.bio}</span>
+        </div>
+      </div>
     </div>
   );
 };

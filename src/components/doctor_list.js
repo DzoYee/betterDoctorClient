@@ -11,7 +11,8 @@ const DoctorList = (props) => {
         firstName={doctor.first_name}
         lastName={doctor.last_name} 
         title={doctor.title}
-        imageUrl={doctor.image_url} />
+        imageUrl={doctor.image_url} 
+        bio={doctor.bio} />
     );
   });
 

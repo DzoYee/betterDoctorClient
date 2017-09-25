@@ -7,10 +7,31 @@ body {
     }
   }
 
+  .doctor-list-item {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: medium solid purple;
+    border-bottom-width: 1px;
+  }
+
+  .doctor-list-item:last-of-type {
+    border-bottom: none;
+  }
+
+  .doctor-item-header {
+    font-style: Roboto;
+    font-size: 20px;
+    color: purple;
+  }
+
   .search-bar {
     padding-top: 40px;
   }
   
+  .doctor-list-container {
+    padding-top: 20px;
+  }
+
   #search-bar {
     width: 100%
   }
