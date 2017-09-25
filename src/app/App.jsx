@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import SearchBar from 'components/search_bar.js';
-import DoctorList from 'components/doctor_list.js';
+import SearchBar from '../components/search_bar.js';
+import DoctorList from '../components/doctor_list.js';
 import _ from 'underscore';
-import betterDoctorHeader from 'images/betterDoctorHeader.png';
+import betterDoctorHeader from '../assets/images/betterDoctorHeader.png';
 
 class App extends Component {
   constructor(props) {
